@@ -18,8 +18,10 @@ public class BootStrapData implements CommandLineRunner {
     }
 
 
-    @Override
-    public void run(String... args) throws Exception {
+
+        @Override
+        public void run (String...args) throws Exception {
+
         Customer jordan = new Customer();
         jordan.setFirstName("Jordan");
         jordan.setLastName("Smith");
@@ -60,6 +62,8 @@ public class BootStrapData implements CommandLineRunner {
         customerRepository.save(steve);
         customerRepository.save(joe);
         customerRepository.save(nick);
+
+        customerRepository.findAll();
     }
 
 }
