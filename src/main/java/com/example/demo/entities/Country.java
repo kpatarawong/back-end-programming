@@ -20,7 +20,7 @@ public class Country {
     @Column(name = "country_id")
     private Long id;
 
-    @Column(name = "countries")
+    @Column(name = "country")
     private String country_name;
 
     @CreationTimestamp
