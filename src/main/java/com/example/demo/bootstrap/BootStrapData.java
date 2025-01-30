@@ -21,46 +21,45 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Customer jordan = new Customer();
-        jordan.setFirstName("David");
+        jordan.setFirstName("Jordan");
         jordan.setLastName("Smith");
         jordan.setAddress("123 Cheese lane");
         jordan.setPostal_code("12345");
         jordan.setPhone("1234567890");
 
         Customer michael = new Customer();
-        michael.setFirstName("Mike");
+        michael.setFirstName("Michael");
         michael.setLastName("Jordan");
         michael.setAddress("32 Jordan Way");
         michael.setPostal_code("12346");
         michael.setPhone("1234567891");
 
         Customer steve = new Customer();
-        steve.setFirstName("John");
+        steve.setFirstName("Steve");
         steve.setLastName("Doe");
         steve.setAddress("313 Steve Way");
         steve.setPostal_code("12347");
         steve.setPhone("1234567892");
 
-
         Customer joe = new Customer();
-        joe.setFirstName("Jack");
+        joe.setFirstName("Joe");
         joe.setLastName("Smith");
         joe.setAddress("176 Smith Street");
         joe.setPostal_code("212348");
         joe.setPhone("1234567893");
 
         Customer nick = new Customer();
-        nick.setFirstName("Jackie");
+        nick.setFirstName("Nick");
         nick.setLastName("Rock");
         nick.setAddress("555 Rock Street");
         nick.setPostal_code("12349");
         nick.setPhone("1234567894");
 
-        customerRepository.save(david);
-        customerRepository.save(mike);
-        customerRepository.save(john);
-        customerRepository.save(jack);
-        customerRepository.save(jackie);
+        customerRepository.save(jordan);
+        customerRepository.save(michael);
+        customerRepository.save(steve);
+        customerRepository.save(joe);
+        customerRepository.save(nick);
     }
 
 }
