@@ -16,54 +16,55 @@ public class BootStrapData implements CommandLineRunner {
         this.customerRepository = customerRepository;
         this.divisionRepository = divisionRepository;
     }
+    @Override
+        public void run (String...args) throws  Exception {
+            if (customerRepository.count() == 1) {
+                Customer jordan = new Customer();
+                jordan.setFirstName("Jordan");
+                jordan.setLastName("Smith");
+                jordan.setAddress("123 Cheese lane");
+                jordan.setPostal_code("12345");
+                jordan.setPhone("1234567890");
+                jordan.setDivision(divisionRepository.getReferenceById(62L));
 
+                Customer michael = new Customer();
+                michael.setFirstName("Michael");
+                michael.setLastName("Jordan");
+                michael.setAddress("32 Jordan Way");
+                michael.setPostal_code("12346");
+                michael.setPhone("1234567891");
+                michael.setDivision(divisionRepository.getReferenceById(42L));
 
+                Customer steve = new Customer();
+                steve.setFirstName("Steve");
+                steve.setLastName("Doe");
+                steve.setAddress("313 Steve Way");
+                steve.setPostal_code("12347");
+                steve.setPhone("1234567892");
+                steve.setDivision(divisionRepository.getReferenceById(32L));
 
-        @Override
-        public void run (String...args) throws Exception {
+                Customer joe = new Customer();
+                joe.setFirstName("Joe");
+                joe.setLastName("Smith");
+                joe.setAddress("176 Smith Street");
+                joe.setPostal_code("212348");
+                joe.setPhone("1234567893");
+                joe.setDivision(divisionRepository.getReferenceById(22L));
 
-        Customer jordan = new Customer();
-        jordan.setFirstName("Jordan");
-        jordan.setLastName("Smith");
-        jordan.setAddress("123 Cheese lane");
-        jordan.setPostal_code("12345");
-        jordan.setPhone("1234567890");
+                Customer nick = new Customer();
+                nick.setFirstName("Nick");
+                nick.setLastName("Rock");
+                nick.setAddress("555 Rock Street");
+                nick.setPostal_code("12349");
+                nick.setPhone("1234567894");
+                nick.setDivision(divisionRepository.getReferenceById(12L));
 
-        Customer michael = new Customer();
-        michael.setFirstName("Michael");
-        michael.setLastName("Jordan");
-        michael.setAddress("32 Jordan Way");
-        michael.setPostal_code("12346");
-        michael.setPhone("1234567891");
+                customerRepository.save(jordan);
+                customerRepository.save(michael);
+                customerRepository.save(steve);
+                customerRepository.save(joe);
+                customerRepository.save(nick);
 
-        Customer steve = new Customer();
-        steve.setFirstName("Steve");
-        steve.setLastName("Doe");
-        steve.setAddress("313 Steve Way");
-        steve.setPostal_code("12347");
-        steve.setPhone("1234567892");
-
-        Customer joe = new Customer();
-        joe.setFirstName("Joe");
-        joe.setLastName("Smith");
-        joe.setAddress("176 Smith Street");
-        joe.setPostal_code("212348");
-        joe.setPhone("1234567893");
-
-        Customer nick = new Customer();
-        nick.setFirstName("Nick");
-        nick.setLastName("Rock");
-        nick.setAddress("555 Rock Street");
-        nick.setPostal_code("12349");
-        nick.setPhone("1234567894");
-
-        customerRepository.save(jordan);
-        customerRepository.save(michael);
-        customerRepository.save(steve);
-        customerRepository.save(joe);
-        customerRepository.save(nick);
-
-        customerRepository.findAll();
+            }
+        }
     }
-
-}
