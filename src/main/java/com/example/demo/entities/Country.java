@@ -20,21 +20,21 @@ public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "country_id")
+    @Column(name="country_id", nullable = false)
     private Long id;
 
-    @Column(name = "country")
+    @Column(name="country", nullable = false)
     private String country_name;
 
+    @Column(name="create_date", updatable = false)
     @CreationTimestamp
-    @Column(name = "create_date")
-    private Date create_date;
+    private Date createDate;
 
+    @Column(name="last_update")
     @UpdateTimestamp
-    @Column(name = "last_update")
-    private Date last_update;
+    private Date lastUpdate;
 
-    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Division> divisions = new HashSet<>();;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "country")
+    private Set<Division> divisions = new HashSet<>();
 
 }

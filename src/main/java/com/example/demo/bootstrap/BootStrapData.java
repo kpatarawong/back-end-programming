@@ -25,7 +25,7 @@ public class BootStrapData implements CommandLineRunner {
                 jordan.setAddress("123 Cheese lane");
                 jordan.setPostal_code("12345");
                 jordan.setPhone("1234567890");
-                jordan.setDivision(divisionRepository.getReferenceById(62L));
+                jordan.setDivision(divisionRepository.findAll().get(6));
 
                 Customer michael = new Customer();
                 michael.setFirstName("Michael");
@@ -33,7 +33,7 @@ public class BootStrapData implements CommandLineRunner {
                 michael.setAddress("32 Jordan Way");
                 michael.setPostal_code("12346");
                 michael.setPhone("1234567891");
-                michael.setDivision(divisionRepository.getReferenceById(42L));
+                michael.setDivision(divisionRepository.findAll().get(7));
 
                 Customer steve = new Customer();
                 steve.setFirstName("Steve");
@@ -41,7 +41,7 @@ public class BootStrapData implements CommandLineRunner {
                 steve.setAddress("313 Steve Way");
                 steve.setPostal_code("12347");
                 steve.setPhone("1234567892");
-                steve.setDivision(divisionRepository.getReferenceById(32L));
+                steve.setDivision(divisionRepository.findAll().get(5));
 
                 Customer joe = new Customer();
                 joe.setFirstName("Joe");
@@ -49,7 +49,7 @@ public class BootStrapData implements CommandLineRunner {
                 joe.setAddress("176 Smith Street");
                 joe.setPostal_code("212348");
                 joe.setPhone("1234567893");
-                joe.setDivision(divisionRepository.getReferenceById(22L));
+                joe.setDivision(divisionRepository.findAll().get(2));
 
                 Customer nick = new Customer();
                 nick.setFirstName("Nick");
@@ -57,7 +57,7 @@ public class BootStrapData implements CommandLineRunner {
                 nick.setAddress("555 Rock Street");
                 nick.setPostal_code("12349");
                 nick.setPhone("1234567894");
-                nick.setDivision(divisionRepository.getReferenceById(12L));
+                nick.setDivision(divisionRepository.findAll().get(3));
 
                 customerRepository.save(jordan);
                 customerRepository.save(michael);
